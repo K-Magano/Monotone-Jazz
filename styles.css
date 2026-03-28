@@ -1,0 +1,832 @@
+/* General Reset */
+body {
+  margin: 0;
+  font-family: 'Arial Black', Gadget, sans-serif; /* Using a bold font similar to the image */
+  background-color: #111; /* Dark background */
+}
+html {
+  scroll-behavior: smooth;
+  /* This ensures the section doesn't hide behind the fixed navbar when you click a link */
+  scroll-padding-top: 130px; 
+}
+.navbar {
+  /* This makes it stay at the top */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  
+  /* Ensure it sits on top of all other sections (images, etc.) */
+  z-index: 1000;
+
+  /* Matches your design aesthetic */
+  background-color: #111; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+  
+  /* Optional: Add a subtle shadow or border to separate it from sections */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* IMPORTANT: Since the nav is now 'fixed', your next section 
+   needs a margin or padding so it doesn't hide behind the nav. */
+body {
+  padding-top: 120px; /* Adjust this value based on your nav's height */
+}
+
+/* Logo Styling */
+.logo {
+  font-size: 48px;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  color: white;
+  letter-spacing: 1px;
+ }
+
+.gold {
+  color: #a68a56; /* The muted gold color from the screenshot */
+}
+
+/* Navigation Links Styling */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px; /* Space between links */
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+/* Hover Effect */
+.nav-links a:hover {
+  color: #a68a56;
+}
+
+.hero-header {
+  height: 70vh;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+              url('img/hero_mono_jazz.jpg') 
+              no-repeat center center/cover;
+  display: flex;
+  flex-direction: column;
+  color: white;
+}
+
+/* Hero Typography */
+.hero-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end; /* Align to the right as per image */
+  padding-right: 10%;
+  text-align: right;
+}
+
+.hero-content h1 {
+  font-size: clamp(3rem, 8vw, 6rem); /* Responsive text size */
+  line-height: 0.9;
+  margin-bottom: 30px;
+}
+
+.cta-btn {
+  background-color: var(--gold);
+  color: white;
+  text-decoration: none;
+  padding: 15px 30px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: opacity 0.3s;
+}
+
+.cta-btn:hover { color: #a68a56; }
+
+.overlay-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+}
+
+.music-section {
+  background-color: #111;
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+  font-family: 'Arial Black', sans-serif;
+}
+
+/* Section Title & Gold Underline */
+.section-title h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.underline {
+  width: 40px;
+  height: 3px;
+  background-color: #a68a56;
+  margin: 0 auto 40px auto;
+}
+/* LISTEN TO OUR MUSIC */
+
+/* Carousel Layout */
+.carousel-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.album-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5px; /* Minimal gap between images as seen in the screenshot */
+}
+
+/* Album Card Styling */
+.album-card img {
+  width: 100%;
+  height: auto;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+  display: block;
+}
+
+.album-card:hover img {
+  filter: grayscale(0%); /* Optional: brings back color on hover */
+}
+
+.album-card h3 {
+  font-size: 16px;
+  margin: 20px 0 5px 0;
+  letter-spacing: 1px;
+}
+
+.album-card a {
+  color: #a68a56;
+  text-decoration: none;
+  font-size: 14px;
+  font-family: Arial, sans-serif; /* Thinner font for "Listen now" */
+}
+
+/* Arrows */
+.arrow {
+  font-size: 24px;
+  color: #555;
+  cursor: pointer;
+  padding: 10px;
+  transition: color 0.3s;
+}
+
+.arrow:hover {
+  color: white;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .album-grid {
+    grid-template-columns: 1fr; /* Stack vertically on mobile */
+    gap: 30px;
+  }
+}
+
+/* UPCOMING SHOWS */
+
+.shows-section {
+  padding: 80px 20px;
+  background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), 
+              url('img/shows-bg.jpg') no-repeat center center/cover;
+  color: white;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+}
+
+.shows-container {
+  max-width: 900px;
+  margin: 0 auto;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.show-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 25px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  text-align: left;
+}
+
+/* Date Styling */
+.date-box {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  min-width: 150px;
+}
+
+.day {
+  color: #a68a56;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.month {
+  display: block;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.weekday {
+  font-size: 12px;
+  color: #888;
+}
+
+/* Content Styling */
+.show-title {
+  font-weight: bold;
+  font-size: 16px;
+  letter-spacing: 1px;
+  flex: 1;
+  padding: 0 20px;
+}
+
+.location {
+  font-size: 13px;
+  color: #ccc;
+  flex: 1;
+}
+
+.time {
+  font-size: 11px;
+  color: #888;
+}
+
+/* Button Styling */
+.ticket-btn {
+  background-color: #a68a56;
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  font-size: 12px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.ticket-btn:hover {
+  background-color: #c4a468;
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+  .show-row {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+  .date-box { justify-content: center; }
+}
+
+/* ABOUT */
+
+.about-section {
+  background-color: #111;
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Image Styling */
+.about-image-container {
+  max-width: 1000px;
+  margin: 0 auto 40px auto;
+}
+
+.band-photo {
+  width: 80%;
+  height: 60%;
+  filter: grayscale(100%); /* Keeps the monochromatic look */
+  /* display: block; */
+}
+
+/* Typography */
+.section-title h2 {
+  font-family: 'Arial Black', sans-serif;
+  font-size: 28px;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.underline {
+  width: 40px;
+  height: 3px;
+  background-color: #a68a56;
+  margin: 0 auto 30px auto;
+}
+
+.bio-text {
+  max-width: 800px;
+  margin: 0 auto 40px auto;
+  font-size: 14px;
+  line-height: 1.8;
+  color: #bbb;
+  padding: 0 15px;
+}
+
+/* Social Icons Styling */
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.social-links a {
+  color: #a68a56; /* Matching the gold accent color */
+  font-size: 18px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: white;
+}
+
+/* Gallery */
+
+.gallery-section {
+  background-color: #111;
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+  font-family: 'Arial Black', sans-serif;
+}
+
+.subtitle {
+  font-family: 'Arial', sans-serif;
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 40px;
+}
+
+/* Main Slider Styling */
+.gallery-main {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto 20px auto;
+  display: flex;
+  align-items: center;
+}
+
+.featured-image {
+  width: 100%;
+  max-width: 900px;
+  height: 500px; /* Set a fixed height that looks good on your screen */
+  overflow: hidden;
+  margin: 0 auto;
+  background-color: #000; /* Fills gaps if image ratio is weird */
+}
+
+#main-view {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* This is the magic: it crops the image to fill the box without stretching */
+  filter: grayscale(100%);
+  display: block;
+}
+
+/* Adjust for mobile so it's not too tall */
+@media (max-width: 768px) {
+  .featured-image {
+    height: 300px;
+  }
+}
+
+.slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: background 0.3s;
+}
+
+.slider-arrow:hover { background: #a68a56; }
+.prev { left: 10px; }
+.next { right: 10px; }
+
+/* Thumbnails Grid */
+.thumbnails-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.thumb {
+  width: 100%;
+  cursor: pointer;
+  filter: grayscale(100%) opacity(0.6);
+  transition: all 0.3s ease;
+}
+
+.thumb:hover, .thumb.active {
+  filter: grayscale(100%) opacity(1);
+  outline: 2px solid #a68a56;
+}
+
+/* Latest News grid and the Newsletter Subscription footer. */
+
+/* News Section Styling */
+.news-section {
+  background-color: #111;
+  color: white;
+  padding: 60px 20px 250px 20px;
+  text-align: center;
+ 
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1100px;
+  margin: 40px auto 0;
+ 
+}
+
+.news-card {
+  text-align: left;
+  
+}
+
+.news-img img {
+  width: 100%;
+  filter: grayscale(100%);
+  display: block;
+  margin-bottom: 15px;
+}
+
+.news-meta {
+  font-size: 11px;
+  color: #777;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  
+}
+
+.category { color: #a68a56; font-weight: bold; }
+
+.news-card h3 {
+  font-size: 16px;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+.news-card p {
+  font-size: 13px;
+  color: #bbb;
+  line-height: 1.6;
+  margin-bottom: 20px;
+ 
+}
+
+.news-p{
+  background-color: blue;
+}
+
+.read-more {
+  display: inline-block;
+  border: 1px solid #444;
+  color: white;
+  padding: 8px 15px;
+  text-decoration: none;
+  font-size: 10px;
+  font-weight: bold;
+  transition: 0.3s;
+  
+
+}
+
+.read-more:hover { border-color: #a68a56; color: #a68a56; }
+
+/* Subscription Section Styling */
+.subscribe-section {
+  padding: 100px 20px;
+  background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), 
+              url('img/saxophone-hands-man-dark-background-copy-space.jpg') no-repeat center center/cover;
+  text-align: left;
+  display: flex;
+  justify-content: center;
+}
+
+.subscribe-content {
+  width: 100%;
+  max-width: 1100px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.subscribe-section h2 {
+  font-size: 24px;
+  letter-spacing: 2px;
+  margin: 0;
+  color: white;
+}
+
+.subscribe-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 400px;
+  margin-top: 30px;
+}
+
+.subscribe-form input {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  padding: 15px;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.subscribe-form button {
+  background-color: #a68a56;
+  border: none;
+  color: white;
+  padding: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.subscribe-form button:hover { background-color: #c4a468; }
+
+/* Desktop adjustment for Subscribe */
+@media (min-width: 768px) {
+  .subscribe-content {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .subscribe-form { margin-top: 0; }
+}
+
+/* Contacts Section Styling */
+.contacts-section {
+  padding: 100px 20px;
+  background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), 
+              url('img/saxophone-hands-man-dark-background-copy-space.jpg') no-repeat center center/cover;
+  color: white;
+  text-align: left; /* Aligned left as per design */
+  display: flex;
+  justify-content: center;
+}
+
+.contacts-container {
+  max-width: 1100px;
+  width: 100%;
+}
+
+.contacts-section h2 {
+  font-family: 'Arial Black', sans-serif;
+  font-size: 28px;
+  letter-spacing: 2px;
+  margin-bottom: 5px;
+}
+
+.contact-description {
+  font-size: 13px;
+  color: #bbb;
+  line-height: 1.6;
+  margin: 30px 0;
+}
+
+.contact-details {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.contact-details a {
+  color: white;
+  text-decoration: none;
+}
+
+.social-links-contacts {
+  display: flex;
+  gap: 15px;
+}
+
+.social-links-contacts a {
+  color: #a68a56; /* Signature Gold */
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.social-links-contacts a:hover { color: white; }
+
+/* Footer Styling */
+.site-footer {
+  background-color: #0c0c0c;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 1px solid #222;
+}
+
+.footer-logo {
+  font-size: 28px;
+  font-weight: bold;
+  font-family: 'Arial Black', sans-serif;
+  color: whitesmoke;
+}
+
+.footer-nav {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-nav a {
+  text-decoration: none;
+  color: white;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.footer-nav a:hover { color: #a68a56; }
+
+/* Mobile View */
+@media (max-width: 768px) {
+  .site-footer {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .footer-nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 2000; /* Higher than the navbar */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  overflow-y: auto;
+}
+
+.modal-content {
+  background-color: #1a1a1a;
+  margin: 5% auto;
+  padding: 40px;
+  border: 1px solid #333;
+  width: 80%;
+  max-width: 800px;
+  position: relative;
+  color: white;
+}
+
+.close-modal {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  font-size: 35px;
+  cursor: pointer;
+  color: #a68a56;
+}
+
+#modal-img {
+  width: 100%;
+  margin-bottom: 20px;
+  filter: grayscale(100%);
+}
+
+#modal-title {
+  font-family: 'Arial Black', sans-serif;
+  letter-spacing: 1px;
+}
+
+#modal-text {
+  line-height: 1.8;
+  color: #bbb;
+  margin-top: 20px;
+}
+
+/* --- Mobile Responsive Rules --- */
+
+@media (max-width: 768px) {
+  /* 1. Navbar Adjustments */
+  .navbar {
+    flex-direction: row; /* Change from column to row for mobile header */
+    justify-content: space-between;
+    padding: 15px 20px;
+  }
+
+  .nav-header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+  }
+
+  .logo { font-size: 32px; margin-bottom: 0; }
+
+  /* Hide links by default on mobile */
+  .nav-links {
+    display: none; 
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: #111;
+    padding: 20px 0;
+    text-align: center;
+    border-bottom: 1px solid #a68a56;
+  }
+
+  /* Show links when 'active' class is added via JS */
+  .nav-links.active {
+    display: flex;
+  }
+
+  /* Burger Menu Icon */
+  .menu-toggle {
+    display: block;
+    cursor: pointer;
+    padding-right: 50px;
+  }
+
+  .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: white;
+    transition: 0.3s;
+  }
+
+  /* 2. Hero Section Adjustments */
+  .hero-content {
+    align-items: center; /* Center text on mobile */
+    padding-right: 0;
+    text-align: center;
+  }
+
+  .hero-content h1 {
+    font-size: 3.5rem;
+  }
+
+  /* 3. Layout Fixes */
+  .about-section {
+    padding: 40px 10px;
+  }
+  
+  .band-photo {
+    width: 100%; /* Full width on mobile */
+  }
+
+  .thumbnails-grid {
+    grid-template-columns: repeat(4, 1fr); /* 4 thumbs per row instead of 7 */
+  }
+}

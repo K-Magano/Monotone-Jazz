@@ -49,6 +49,7 @@ body {
   text-decoration: none;
   color: white;
   letter-spacing: 1px;
+
  }
 
 .gold {
@@ -391,35 +392,61 @@ body {
 }
 
 /* Main Slider Styling */
+/* Ensure all images in the gallery display in full color by default */
+.gallery-section img {
+  filter: none !important; /* Removes grayscale/sepia filters if any were applied */
+  opacity: 1 !important;    /* Resets any dimming/fading effects */
+}
+.gallery-section {
+  background-color: #111;
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+  font-family: 'Arial Black', sans-serif;
+}
+
+.subtitle {
+  font-family: 'Arial', sans-serif;
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 40px;
+}
+
 .gallery-main {
   position: relative;
   max-width: 900px;
   margin: 0 auto 20px auto;
   display: flex;
   align-items: center;
+  justify-content: center; /* Centers the variable-sized image horizontally */
 }
 
 .featured-image {
   width: 100%;
   max-width: 900px;
-  height: 500px; /* Set a fixed height that looks good on your screen */
+  /* Removed fixed height so it doesn't force a crop */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: #; */
+  border-radius: 8px;
   overflow: hidden;
-  margin: 0 auto;
-  background-color: #000; /* Fills gaps if image ratio is weird */
+  padding: 10px; /* Gives a little breathing room around different sized photos */
 }
 
 #main-view {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* This is the magic: it crops the image to fill the box without stretching */
-  filter: grayscale(100%);
+  max-width: 100%;
+  max-height: 600px; /* Prevents extremely tall images from taking over the screen */
+  width: auto;       /* Allows width to adjust naturally */
+  height: auto;      /* Allows height to adjust naturally */
+  object-fit: contain; /* Ensures the whole image is shown without cutting anything */
   display: block;
+  margin: 0 auto;
 }
-
-/* Adjust for mobile so it's not too tall */
+/* Adjust mobile max-height if needed */
 @media (max-width: 768px) {
-  .featured-image {
-    height: 300px;
+  #main-view {
+    max-height: 400px;
   }
 }
 
@@ -455,14 +482,22 @@ body {
 
 .thumb {
   width: 100%;
+  height: 70px;     /* Gives all thumbnails a uniform height */
+  object-fit: cover; /* Ensures images crop/resize neatly inside the grid */
   cursor: pointer;
-  filter: grayscale(100%) opacity(0.6);
+  opacity: 0.6;     /* Dim inactive thumbnails slightly */
   transition: all 0.3s ease;
+  border-radius: 4px;
+  border: 2px solid transparent;
 }
 
-.thumb:hover, .thumb.active {
-  filter: grayscale(100%) opacity(1);
-  outline: 2px solid #a68a56;
+.thumb:hover {
+  opacity: 0.9;
+}
+
+.thumb.active {
+  opacity: 1;        /* Full brightness for the selected thumbnail */
+  border-color: #a68a56; /* Highlights the active thumbnail with your theme color */
 }
 
 /* Latest News grid and the Newsletter Subscription footer. */

@@ -49,7 +49,6 @@ body {
   text-decoration: none;
   color: white;
   letter-spacing: 1px;
-
  }
 
 .gold {
@@ -386,7 +385,7 @@ body {
 
 .subtitle {
   font-family: 'Arial', sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   color: #777;
   margin-bottom: 40px;
 }
@@ -407,7 +406,7 @@ body {
 
 .subtitle {
   font-family: 'Arial', sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   color: #777;
   margin-bottom: 40px;
 }
@@ -639,58 +638,107 @@ body {
 }
 
 /* Contacts Section Styling */
+/* Contacts Section Layout */
 .contacts-section {
-  padding: 100px 20px;
-  background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), 
-              url('img/saxophone-hands-man-dark-background-copy-space.jpg') no-repeat center center/cover;
-  color: white;
-  text-align: left; /* Aligned left as per design */
-  display: flex;
-  justify-content: center;
+  background-color: #111;
+  color: #fff;
+  padding: 80px 20px;
+  text-align: center;
 }
 
 .contacts-container {
-  max-width: 1100px;
-  width: 100%;
-}
-
-.contacts-section h2 {
-  font-family: 'Arial Black', sans-serif;
-  font-size: 28px;
-  letter-spacing: 2px;
-  margin-bottom: 5px;
+  max-width: 600px; /* Keeps the form focused and easy to read */
+  margin: 0 auto;
 }
 
 .contact-description {
-  font-size: 13px;
-  color: #bbb;
+  color: #aaa;
+  font-size: 18px;
   line-height: 1.6;
-  margin: 30px 0;
-}
-
-.contact-details {
-  font-size: 14px;
-  font-weight: bold;
   margin-bottom: 30px;
 }
 
-.contact-details a {
-  color: white;
-  text-decoration: none;
-}
-
-.social-links-contacts {
+/* Form Styles */
+.contact-form {
   display: flex;
+  flex-direction: column;
   gap: 15px;
+  margin-bottom: 35px;
 }
 
-.social-links-contacts a {
-  color: #a68a56; /* Signature Gold */
-  font-size: 16px;
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 14px 16px;
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 14px;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+  box-sizing: border-border-box;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #a68a56; /* Accent color matching your theme */
+  background-color: #222;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Submit Button */
+.submit-btn {
+  background-color: #a68a56;
+  color: #111;
+  font-weight: bold;
+  border: none;
+  padding: 14px 28px;
+  font-size: 14px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+}
+
+.submit-btn:hover {
+  background-color: #c4a56a;
+  transform: translateY(-2px);
+}
+
+/* Details and Links */
+.contact-details a {
+  color: #a68a56;
+  text-decoration: none;
   transition: color 0.3s;
 }
 
-.social-links-contacts a:hover { color: white; }
+.contact-details a:hover {
+  color: #fff;
+}
+
+.social-links-contacts {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.social-links-contacts a {
+  color: #fff;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+.social-links-contacts a:hover {
+  color: #a68a56;
+}
 
 /* Footer Styling */
 .site-footer {
@@ -702,12 +750,12 @@ body {
   border-top: 1px solid #222;
 }
 
-.footer-logo {
+/* .footer-logo {
   font-size: 28px;
   font-weight: bold;
   font-family: 'Arial Black', sans-serif;
   color: whitesmoke;
-}
+} */
 
 .footer-nav {
   list-style: none;
@@ -720,7 +768,7 @@ body {
 .footer-nav a {
   text-decoration: none;
   color: white;
-  font-size: 11px;
+  font-size: 15px;
   font-weight: bold;
   letter-spacing: 1px;
 }
